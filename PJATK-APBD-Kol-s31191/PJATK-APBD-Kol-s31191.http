@@ -1,0 +1,45 @@
+@EFCore_CodeFirst_Test_Example_HostAddress = http://localhost:5027
+
+###
+
+GET {{EFCore_CodeFirst_Test_Example_HostAddress}}/api/Books
+
+###
+
+GET {{EFCore_CodeFirst_Test_Example_HostAddress}}/api/Books?title=t
+
+###
+
+GET {{EFCore_CodeFirst_Test_Example_HostAddress}}/api/Books/1
+
+###
+
+GET {{EFCore_CodeFirst_Test_Example_HostAddress}}/api/Books/2
+
+###
+
+POST {{EFCore_CodeFirst_Test_Example_HostAddress}}/api/Books
+Content-Type: application/json
+
+{
+  "Title": "Moja ksiazka",
+  "AuthorFirstName": "Testowy autor",
+  "AuthorLastName": "Testowy autor",
+  "Genres": ["Przygoda", "Akcja", "Tajemnica"]
+}
+
+###
+
+PUT {{EFCore_CodeFirst_Test_Example_HostAddress}}/api/Books/6
+Content-Type: application/json
+
+{
+"Title": "Moja ksiazka 2",
+"AuthorFirstName": "Testowy autor 2",
+"AuthorLastName": "Testowy autor 2",
+"Genres": ["Przygoda", "Akcja"]
+}
+
+###
+
+DELETE {{EFCore_CodeFirst_Test_Example_HostAddress}}/api/Books/2
