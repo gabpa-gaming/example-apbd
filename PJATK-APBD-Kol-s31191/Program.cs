@@ -15,7 +15,6 @@ builder.Services.AddDbContext<DatabaseContext>(opt =>
 {
     opt.UseSqlServer(
         builder.Configuration.GetConnectionString("Default"),
-        // Zmieniłem lokalizację tabeli z migracjami ze względu na istnienie już takiej tabeli w moim głównym chemacie
         x => x.MigrationsHistoryTable("EFCore_Migrations", builder.Configuration["DB:DefaultSchema"])
     );
 });
