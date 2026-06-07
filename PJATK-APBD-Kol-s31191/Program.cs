@@ -14,8 +14,7 @@ builder.Services.AddScoped<IDbService, DbService>();
 builder.Services.AddDbContext<DatabaseContext>(opt =>
 {
     opt.UseSqlServer(
-        builder.Configuration.GetConnectionString("Default"),
-        x => x.MigrationsHistoryTable("EFCore_Migrations", builder.Configuration["DB:DefaultSchema"])
+        builder.Configuration.GetConnectionString("Default")
     );
 });
 
